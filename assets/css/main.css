@@ -4710,10 +4710,24 @@ input, select, textarea {
   background-color: #444;      /* subtle hover effect */
 }
 
+/* Ensure posts keep their intended grid/flex behavior when shown via JS */
 section.posts {
   display: flex !important;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
+
+section.posts > article {
+  box-sizing: border-box;
+}
+
+/* Optional: restore two-column layout if broken */
+@media screen and (min-width: 981px) {
+  section.posts > article {
+    width: 48%;
+  }
+}
+
+
 
