@@ -32,11 +32,9 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="#SQL">SQL</a></li>
-							<li class="active"><a href="#Python">PYTHON</a></li>
-							<li class="active"><a href="#Snowflake">SNOWFLAKE</a></li>
-							<!--<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li> -->
+						    <li><a href="#" class="tab-link active" data-tab="SQL">SQL</a></li>
+						    <li><a href="#" class="tab-link" data-tab="Python">Python</a></li>
+						    <li><a href="#" class="tab-link" data-tab="Snowflake">Snowflake</a></li>
 						</ul>
 						
 						<ul class="icons">
@@ -65,7 +63,7 @@
 							</article>
 
 						<!-- Posts -->
-							<section class="posts">
+							<section class="posts" id = "SQL">
 								<article>
 									<header>
 										<span class="date">September 20, 2021</span>
@@ -127,6 +125,24 @@
 									</ul>
 								</article> 
 
+							</section>
+
+							<section class="posts" id="Python" style="display: none;">
+							    <article>
+							        <header>
+							            <h2>Python Projects</h2>
+							        </header>
+							        <p>Coming soon...</p>
+							    </article>
+							</section>
+							
+							<section class="posts" id="Snowflake" style="display: none;">
+							    <article>
+							        <header>
+							            <h2>Snowflake Projects</h2>
+							        </header>
+							        <p>Coming soon...</p>
+							    </article>
 							</section>
 
 				
@@ -194,9 +210,35 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			document.addEventListener("DOMContentLoaded", function() {
+			  const tabs = document.querySelectorAll(".tab-link");
+			  const sections = document.querySelectorAll(".posts");
+			
+			  tabs.forEach(tab => {
+			    tab.addEventListener("click", function(e) {
+			      e.preventDefault();
+			
+			      // Remove "active" from all tabs
+			      tabs.forEach(t => t.classList.remove("active"));
+			
+			      // Hide all sections
+			      sections.forEach(s => s.style.display = "none");
+			
+			      // Add "active" class to clicked tab
+			      this.classList.add("active");
+			
+			      // Show the selected section
+			      const selectedTab = this.getAttribute("data-tab");
+			      document.getElementById(selectedTab).style.display = "block";
+			    });
+			  });
+			});
+			</script>
 
 	</body>
 </html>
+
 
 
 
