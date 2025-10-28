@@ -4697,3 +4697,16 @@ input, select, textarea {
 
 	}
 
+/* Highlight the active tab in the navbar */
+#nav .links a.active {
+  background-color: #2b2b2b;   /* dark highlight */
+  color: #ffffff !important;   /* text color */
+  border-radius: 8px;
+  padding: 5px 12px;
+  transition: background-color 0.3s ease;
+}
+
+#nav .links a:hover {
+  background-color: #444;      /* subtle hover effect */
+}
+
