@@ -216,30 +216,45 @@
 			document.addEventListener("DOMContentLoaded", function() {
 			  const tabs = document.querySelectorAll(".tab-link");
 			  const sections = document.querySelectorAll(".posts");
+			  const savedTab = localStorage.getItem("activeTab") || "SQL";
+			
+			  // Hide all and show saved tab
+			  sections.forEach(s => s.style.display = "none");
+			  const activeSection = document.getElementById(savedTab);
+			  activeSection.style.display = "grid"; // ✅ keep the grid layout
+			
+			  tabs.forEach(t => {
+			    if (t.getAttribute("data-tab") === savedTab) {
+			      t.classList.add("active");
+			    } else {
+			      t.classList.remove("active");
+			    }
+			  });
 			
 			  tabs.forEach(tab => {
-				tab.addEventListener("click", function(e) {
-				  e.preventDefault();
+			    tab.addEventListener("click", function(e) {
+			      e.preventDefault();
+			      const selectedTab = this.getAttribute("data-tab");
 			
-				  // Remove "active" from all tabs
-				  tabs.forEach(t => t.classList.remove("active"));
+			      // Update active class
+			      tabs.forEach(t => t.classList.remove("active"));
+			      this.classList.add("active");
 			
-				  // Hide all sections
-				  sections.forEach(s => s.style.display = "none");
+			      // Show correct section with grid layout
+			      sections.forEach(s => s.style.display = "none");
+			      const sectionToShow = document.getElementById(selectedTab);
+			      sectionToShow.style.display = "grid"; // ✅ use grid, not block
 			
-				  // Add "active" class to clicked tab
-				  this.classList.add("active");
-			
-				  // Show the selected section
-				  const selectedTab = this.getAttribute("data-tab");
-				  document.getElementById(selectedTab).style.display = "block";
-				});
+			      // Save selection
+			      localStorage.setItem("activeTab", selectedTab);
+			    });
 			  });
 			});
 			</script>
 
 	</body>
 </html>
+
 
 
 
