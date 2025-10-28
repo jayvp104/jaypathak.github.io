@@ -4710,3 +4710,10 @@ input, select, textarea {
   background-color: #444;      /* subtle hover effect */
 }
 
+section.posts {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
