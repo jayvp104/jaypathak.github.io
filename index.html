@@ -215,13 +215,19 @@
 			  const tabs = document.querySelectorAll(".tab-link");
 			  const sections = document.querySelectorAll(".posts");
 			
+			  // Hide all sections except SQL on load
+			  sections.forEach(section => {
+			    if (section.id !== "SQL") {
+			      section.style.display = "none";
+			    }
+			  });
+			
 			  tabs.forEach(tab => {
 			    tab.addEventListener("click", function(e) {
 			      e.preventDefault();
-			
 			      tabs.forEach(t => t.classList.remove("active"));
 			      this.classList.add("active");
-			      // Remove the two lines below if you want all sections visible
+			
 			      sections.forEach(s => s.style.display = "none");
 			      const selectedTab = this.getAttribute("data-tab");
 			      document.getElementById(selectedTab).style.display = "block";
@@ -231,8 +237,10 @@
 			</script>
 
 
+
 	</body>
 </html>
+
 
 
 
