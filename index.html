@@ -127,7 +127,7 @@
 
 							</section>
 
-							<section class="posts" id="Python" style="display: none;">
+							<section class="posts" id="Python">
 							    <article>
 								    <header>
 								      <h2>Python Projects</h2>
@@ -136,7 +136,7 @@
 							    </article>
 							</section>
 							
-							<section class="posts" id="Snowflake" style="display: none;">
+							<section class="posts" id="Snowflake">
 							    <article>
 								  <header>
 								    <h2>Snowflake Projects</h2>
@@ -216,44 +216,35 @@
 			document.addEventListener("DOMContentLoaded", function() {
 			  const tabs = document.querySelectorAll(".tab-link");
 			  const sections = document.querySelectorAll(".posts");
-			  const savedTab = localStorage.getItem("activeTab") || "SQL";
 			
-			  // Hide all and show saved tab
-			  sections.forEach(s => s.style.display = "none");
-			  const activeSection = document.getElementById(savedTab);
-			  activeSection.style.display = "grid"; // ✅ keep the grid layout
-			
-			  tabs.forEach(t => {
-			    if (t.getAttribute("data-tab") === savedTab) {
-			      t.classList.add("active");
-			    } else {
-			      t.classList.remove("active");
-			    }
-			  });
+			  // Hide all sections except SQL on load
+			  sections.forEach(section => section.classList.add("hidden"));
+			  document.getElementById("SQL").classList.remove("hidden");
 			
 			  tabs.forEach(tab => {
 			    tab.addEventListener("click", function(e) {
 			      e.preventDefault();
-			      const selectedTab = this.getAttribute("data-tab");
 			
-			      // Update active class
+			      // Remove active class from all tabs
 			      tabs.forEach(t => t.classList.remove("active"));
 			      this.classList.add("active");
 			
-			      // Show correct section with grid layout
-			      sections.forEach(s => s.style.display = "none");
-			      const sectionToShow = document.getElementById(selectedTab);
-			      sectionToShow.style.display = "grid"; // ✅ use grid, not block
+			      // Hide all sections
+			      sections.forEach(s => s.classList.add("hidden"));
 			
-			      // Save selection
-			      localStorage.setItem("activeTab", selectedTab);
+			      // Show selected tab section
+			      const selectedTab = this.getAttribute("data-tab");
+			      const sectionToShow = document.getElementById(selectedTab);
+			      sectionToShow.classList.remove("hidden");
 			    });
 			  });
 			});
 			</script>
 
+
 	</body>
 </html>
+
 
 
 
