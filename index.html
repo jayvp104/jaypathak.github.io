@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 
 <html>
@@ -32,9 +33,11 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-						    <li><a href="#" class="tab-link active" data-tab="SQL">   SQL   </a></li>
-						    <li><a href="#" class="tab-link" data-tab="Python"> Python </a></li>
-						    <li><a href="#" class="tab-link" data-tab="Snowflake">Snowflake</a></li>
+							<li class="active"><a href="#SQL">SQL</a></li>
+							<li class="active"><a href="#Python">PYTHON</a></li>
+							<li class="active"><a href="#Snowflake">SNOWFLAKE</a></li>
+							<!--<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li> -->
 						</ul>
 						
 						<ul class="icons">
@@ -44,11 +47,26 @@
 						
 					</nav>
 
-				<!-- SQL -->
-					<div id = "main">
-						
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">September 20, 2021</span>
+									<h2><a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank">Data cleaning<br />
+									SQL</a></h2>
+									<p>In this project, I have selected housing data for Nashville. <br />
+									Project focuses on refining few columns and rows in order to make it more suitable for further analysis.</p>
+								</header>
+								<a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank" class="image main"><img src="images/Housing.jpg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank" class="button large">View Project</a></li>
+								</ul>
+							</article>
+
 						<!-- Posts -->
-							<section class="posts" id="SQL">
+							<section class="posts">
 								<article>
 									<header>
 										<span class="date">September 20, 2021</span>
@@ -63,21 +81,6 @@
 								 	   </p>
 									<ul class="actions special">
 										<li><a href="https://github.com/jayvp104/PortfolioProject/blob/02e964eddb5d357e62cfa609c93857b17786bcd7/Movies_data_SQL_concepts.sql" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								<!-- Featured Post -->
-								<article>
-									<header>
-										<span class="date">September 20, 2021</span>
-										<h2><a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank">Data cleaning<br />
-										SQL</a></h2>
-									</header>
-									<a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank" class="image main"><img src="images/Housing.jpg" alt="" /></a>
-									<p>In this project, I have selected housing data for Nashville. <br />
-										Project focuses on refining few columns and rows in order to make it more suitable for further analysis.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/jayvp104/PortfolioProject/blob/main/SQL/Data_Cleaning_Project_Nashville_Housing.sql" target="_blank" class="button large">View Project</a></li>
 									</ul>
 								</article>
 								
@@ -125,24 +128,6 @@
 									</ul>
 								</article> 
 
-							</section>
-
-							<section class="posts" id="Python">
-							    <article>
-								    <header>
-								      <h2>Python Projects</h2>
-								    </header>
-								    <p>Coming soon...</p>
-							    </article>
-							</section>
-							
-							<section class="posts" id="Snowflake">
-							    <article>
-								  <header>
-								    <h2>Snowflake Projects</h2>
-								  </header>
-								  <p>Coming soon...</p>
-							    </article>
 							</section>
 
 				
@@ -202,8 +187,6 @@
 
 			</div>
 
-		
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -212,38 +195,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-			document.addEventListener("DOMContentLoaded", function() {
-			  const tabs = document.querySelectorAll(".tab-link");
-			  const sections = document.querySelectorAll(".posts");
-			
-			  // Hide all sections except SQL on load
-			  sections.forEach(section => section.classList.add("hidden"));
-			  document.getElementById("SQL").classList.remove("hidden");
-			
-			  tabs.forEach(tab => {
-			    tab.addEventListener("click", function(e) {
-			      e.preventDefault();
-			
-			      // Remove active class from all tabs
-			      tabs.forEach(t => t.classList.remove("active"));
-			      this.classList.add("active");
-			
-			      // Hide all sections
-			      sections.forEach(s => s.classList.add("hidden"));
-			
-			      // Show selected tab section
-			      const selectedTab = this.getAttribute("data-tab");
-			      const sectionToShow = document.getElementById(selectedTab);
-			      sectionToShow.classList.remove("hidden");
-			    });
-			  });
-			});
-			</script>
-
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
