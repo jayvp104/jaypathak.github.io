@@ -219,16 +219,10 @@
 			    tab.addEventListener("click", function(e) {
 			      e.preventDefault();
 			
-			      // Remove "active" from all tabs
 			      tabs.forEach(t => t.classList.remove("active"));
-			
-			      // Hide all sections
-			      sections.forEach(s => s.style.display = "none");
-			
-			      // Add "active" class to clicked tab
 			      this.classList.add("active");
-			
-			      // Show the selected section
+			      // Remove the two lines below if you want all sections visible
+			      sections.forEach(s => s.style.display = "none");
 			      const selectedTab = this.getAttribute("data-tab");
 			      document.getElementById(selectedTab).style.display = "block";
 			    });
@@ -236,8 +230,10 @@
 			});
 			</script>
 
+
 	</body>
 </html>
+
 
 
 
