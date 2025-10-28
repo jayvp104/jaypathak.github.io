@@ -31,7 +31,7 @@
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
+					<nav id="nav" class="tabs-container">
 						<!--
 						<ul class="links">
 						    <li><a href="#" class="tab-link active" data-tab="SQL">   SQL   </a></li>
@@ -39,13 +39,12 @@
 						    <li><a href="#" class="tab-link" data-tab="Snowflake">Snowflake</a></li>
 						</ul> 
 						-->
-						<ul class="tabs-container">
-							<div class="tab-buttons">
-								<button class="tab-button active" onclick="openTab(event, 'tab1Content')">SQL</button>
-								<button class="tab-button" onclick="openTab(event, 'tab2Content')">Python</button>
-								<button class="tab-button" onclick="openTab(event, 'tab3Content')">Snowflake</button>
-							</div>
-						</ul>
+						
+						<div class="tab-buttons">
+							<button class="tab-button active" onclick="openTab(event, 'tab1Content')">SQL</button>
+							<button class="tab-button" onclick="openTab(event, 'tab2Content')">Python</button>
+							<button class="tab-button" onclick="openTab(event, 'tab3Content')">Snowflake</button>
+						</div>
 
 						
 						<ul class="icons">
@@ -206,6 +205,7 @@
 
 	</body>
 </html>
+
 
 
 
