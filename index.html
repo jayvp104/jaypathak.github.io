@@ -2,6 +2,12 @@
 
 <html>
 	<head>
+		<style>
+		  #Python,
+		  #Snowflake {
+		    display: none !important;
+		  }
+		</style>
 		<title>Jay Pathak Data Analytics Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -215,11 +221,9 @@
 			  const tabs = document.querySelectorAll(".tab-link");
 			  const sections = document.querySelectorAll(".posts");
 			
-			  // Hide all sections except SQL on load
+			  // Hide all except SQL
 			  sections.forEach(section => {
-			    if (section.id !== "SQL") {
-			      section.style.display = "none";
-			    }
+			    section.style.display = section.id === "SQL" ? "flex" : "none";
 			  });
 			
 			  tabs.forEach(tab => {
@@ -228,9 +232,10 @@
 			      tabs.forEach(t => t.classList.remove("active"));
 			      this.classList.add("active");
 			
-			      sections.forEach(s => s.style.display = "none");
 			      const selectedTab = this.getAttribute("data-tab");
-			      document.getElementById(selectedTab).style.display = "block";
+			      sections.forEach(s => {
+			        s.style.display = s.id === selectedTab ? "flex" : "none";
+			      });
 			    });
 			  });
 			});
@@ -238,8 +243,10 @@
 
 
 
+
 	</body>
 </html>
+
 
 
 
